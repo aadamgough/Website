@@ -1,0 +1,33 @@
+@font-face {
+  font-family: "Madeinfinity-black";
+  src: url("./fonts/MADEINFINITY PERSONALUSE-Black.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Madeinfinity-regular";
+  src: url("./fonts/MADEINFINITY PERSONALUSE-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "VIOLA";
+  src: url("./fonts/VIOLA.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  font-family: "Madeinfinity-black", sans-serif; /* Make sure to fallback to a default font */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
