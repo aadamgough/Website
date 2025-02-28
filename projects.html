@@ -84,6 +84,9 @@
             <div class="hero-div">
                 <h1 letters-slide-up="" text-split="" class="hero-text">Projects</h1>
             </div>
+            <div class="hero-div">
+                <p text-split="" class="about-text">My recent passions and explorations, uniquely solving problems and building products for the future</p>
+            </div>
         </section>
         <section class="hero-wrapper-test">
             <div class="hero-div">
@@ -166,7 +169,7 @@
                             </div>
                             <div class="selected-work-info-div">
                                 <h1>Evervest</h1>
-                                <div class="selected-work-info-text">What started out as an internal tool, I turned into an application to help automate investment portfolio construction.</div>
+                                <div class="selected-work-info-text">What started out as an internal tool, I turned into an application to help automate investment portfolio construction</div>
                                 <a href="evervest.html" class="selected-work-button w-button">View Project</a>
                             </div>
                         </div>
@@ -182,9 +185,9 @@
                                 <h5 class="heading-2">● Project 02</h5>
                             </div>
                             <div class="selected-work-info-div">
-                                <h1>TBD</h1>
-                                <div class="selected-work-info-text">TBD design work, I think it'll be good at some point </div>
-                                <a target="_blank" class="selected-work-button w-button">View Project</a>
+                                <h1>Stride</h1>
+                                <div class="selected-work-info-text">Your personal trainer for professional, audio-led workouts for running, cycling, and swimming</div>
+                                <a href="stride.html" class="selected-work-button w-button">View Project</a>
                             </div>
                         </div>
                         <div class="column-2 w-col w-col-7 w-col-stack">
@@ -220,7 +223,7 @@
             window.addEventListener("DOMContentLoaded", (event)=>{
                 // Split text into spans
                 let typeSplit = new SplitType("[text-split]",{
-                    types: "words, chars",
+                    types: "words",
                     tagName: "span"
                 });
 
@@ -243,142 +246,28 @@
                     });
                 }
 
-                $("[words-slide-up]").each(function(index) {
+                // Simplified animation for all text elements
+                $("[letters-slide-up], [words-slide-up], [words-rotate-in], [words-slide-from-right], [letters-slide-down], [letters-fade-in], [letters-fade-in-random], [scrub-each-word]").each(function(index) {
                     let tl = gsap.timeline({
                         paused: true
                     });
                     tl.from($(this).find(".word"), {
                         opacity: 0,
-                        yPercent: 100,
-                        duration: 0.5,
-                        ease: "back.out(2)",
-                        stagger: {
-                            amount: 0.5
-                        }
-                    });
-                    createScrollTrigger($(this), tl);
-                });
-
-                $("[words-rotate-in]").each(function(index) {
-                    let tl = gsap.timeline({
-                        paused: true
-                    });
-                    tl.set($(this).find(".word"), {
-                        transformPerspective: 1000
-                    });
-                    tl.from($(this).find(".word"), {
-                        rotationX: -90,
-                        duration: 0.6,
-                        ease: "power2.out",
-                        stagger: {
-                            amount: 0.6
-                        }
-                    });
-                    createScrollTrigger($(this), tl);
-                });
-
-                $("[words-slide-from-right]").each(function(index) {
-                    let tl = gsap.timeline({
-                        paused: true
-                    });
-                    tl.from($(this).find(".word"), {
-                        opacity: 0,
-                        x: "1em",
-                        duration: 0.5,
+                        y: 75,
+                        duration: 2,
                         ease: "power2.out",
                         stagger: {
                             amount: 0.5
                         }
                     });
                     createScrollTrigger($(this), tl);
-                });
-
-                $("[letters-slide-up]").each(function(index) {
-                    let tl = gsap.timeline({
-                        paused: true
-                    });
-                    tl.from($(this).find(".char"), {
-                        yPercent: 100,
-                        duration: 0.5,
-                        ease: "power1.out",
-                        stagger: {
-                            amount: 0.8
-                        }
-                    });
-                    createScrollTrigger($(this), tl);
-                });
-
-                $("[letters-slide-down]").each(function(index) {
-                    let tl = gsap.timeline({
-                        paused: true
-                    });
-                    tl.from($(this).find(".char"), {
-                        yPercent: -120,
-                        duration: 0.3,
-                        ease: "power1.out",
-                        stagger: {
-                            amount: 0.7
-                        }
-                    });
-                    createScrollTrigger($(this), tl);
-                });
-
-                $("[letters-fade-in]").each(function(index) {
-                    let tl = gsap.timeline({
-                        paused: true
-                    });
-                    tl.from($(this).find(".char"), {
-                        opacity: 0,
-                        duration: 0.2,
-                        ease: "power1.out",
-                        stagger: {
-                            amount: 0.8
-                        }
-                    });
-                    createScrollTrigger($(this), tl);
-                });
-
-                $("[letters-fade-in-random]").each(function(index) {
-                    let tl = gsap.timeline({
-                        paused: true
-                    });
-                    tl.from($(this).find(".char"), {
-                        opacity: 0,
-                        duration: 0.05,
-                        ease: "power1.out",
-                        stagger: {
-                            amount: 0.4,
-                            from: "random"
-                        }
-                    });
-                    createScrollTrigger($(this), tl);
-                });
-
-                $("[scrub-each-word]").each(function(index) {
-                    let tl = gsap.timeline({
-                        scrollTrigger: {
-                            trigger: $(this),
-                            start: "top 90%",
-                            end: "top center",
-                            scrub: true
-                        }
-                    });
-                    tl.from($(this).find(".word"), {
-                        opacity: 0.2,
-                        duration: 0.2,
-                        ease: "power1.out",
-                        stagger: {
-                            each: 0.4
-                        }
-                    });
                 });
 
                 // Avoid flash of unstyled content
                 gsap.set("[text-split]", {
                     opacity: 1
                 });
-            }
-            );
+            });
         </script>
         <script src="https://cdn.jsdelivr.net/npm/grained@0.0.2/grained.min.js"></script>
         <script>

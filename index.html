@@ -31,8 +31,6 @@
                 ("ontouchstart"in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch")
             }(window, document);
         </script>
-        <link href="https://cdn.prod.website-files.com/64daf5c0c154912f54a34b6e/64e28e911d1c34380e37416b_Favicon.png" rel="shortcut icon" type="image/x-icon"/>
-        <link href="https://cdn.prod.website-files.com/64daf5c0c154912f54a34b6e/64e28e95bcf173db90f13639_Webclip.png" rel="apple-touch-icon"/>
         <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-CPRYFE59H2"></script>
         <script type="text/javascript">
             window.dataLayer = window.dataLayer || [];
@@ -61,6 +59,11 @@
 
             #grain {
                 pointer-events: none
+            }
+        </style>
+        <style>
+            .footer-link-block {
+                transition: background-color 0.3s ease; /* Smooth transition */
             }
         </style>
     </head>
@@ -195,13 +198,13 @@
         </section>
         <div class="footer-container">
             <div class="footer-contact-div w-clearfix">
-                <a data-w-id="e27f1cb7-cae3-1e4f-8e17-f4506b229be7" href="https://www.linkedin.com/in/adam-gough-b64109" target="_blank" class="footer-link-block w-inline-block">
+                <a href="https://www.linkedin.com/in/adam-gough-b64109" target="_blank" class="footer-link-block w-inline-block">
                     <div class="social-link">Linkedin</div>
                 </a>
-                <a data-w-id="e27f1cb7-cae3-1e4f-8e17-f4506b229bea" href="https://github.com/aadamgough" target="_blank" class="footer-link-block w-inline-block">
+                <a href="https://github.com/aadamgough" target="_blank" class="footer-link-block w-inline-block">
                     <div class="social-link">Github</div>
                 </a>
-                <a data-w-id="e27f1cb7-cae3-1e4f-8e17-f4506b229bed" target="_blank" class="footer-link-block last w-inline-block">
+                <a target="_blank" class="footer-link-block last w-inline-block">
                     <div class="social-link">Coming Soon...</div>
                 </a>
             </div>
@@ -245,11 +248,11 @@
                     });
                     tl.from($(this).find(".word"), {
                         opacity: 0,
-                        y: 20, // Small vertical offset for smooth entrance
-                        duration: 1,
+                        y: 75,
+                        duration: 2,
                         ease: "power2.out",
                         stagger: {
-                            amount: 0.3 // Reduced stagger time for smoother appearance
+                            amount: 0.5 // Reduced stagger time for smoother appearance
                         }
                     });
                     createScrollTrigger($(this), tl);
@@ -258,6 +261,27 @@
                 // Avoid flash of unstyled content
                 gsap.set("[text-split]", {
                     opacity: 1
+                });
+            });
+        </script>
+        <script>
+            // Function to generate a random color
+            function getRandomColor() {
+                const letters = '0123456789ABCDEF';
+                let color = '#';
+                for (let i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            }
+        
+            // Add hover event listeners to footer link blocks
+            document.querySelectorAll('.footer-link-block').forEach(block => {
+                block.addEventListener('mouseenter', () => {
+                    block.style.backgroundColor = getRandomColor();
+                });
+                block.addEventListener('mouseleave', () => {
+                    block.style.backgroundColor = ''; // Reset to original color
                 });
             });
         </script>

@@ -1,7 +1,7 @@
 html {
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
-    font-family: sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   }
   
   body {
@@ -234,7 +234,7 @@ html {
     color: #333;
     background-color: #fff;
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: Arial, Gill Sans;
     font-size: 14px;
     line-height: 20px;
   }
@@ -2305,12 +2305,13 @@ html {
   
   .hero-wrapper {
     width: 100%;
-    height: auto;
+    display: flex;
     align-items: center;
+    justify-content: space-evenly;
+    height: auto;
     margin-bottom: 0;
     padding-top: 7vw;
     padding-bottom: 7vw;
-    display: block;
   }
   
   .hero-div {
@@ -2328,7 +2329,7 @@ html {
     color: #0f0f0f;
     font-family: Neuemontreal, sans-serif;
     font-size: 8vw;
-    font-weight: 600;
+    font-weight: 400;
     line-height: .9em;
   }
   
