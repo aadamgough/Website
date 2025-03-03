@@ -68,6 +68,7 @@
         </style>
     </head>
     <body data-w-id="6222327d11278372db85ac32" style="background-color:rgb(240,240,240)" class="body">
+        <div id="swup" class="transition-fade">
         <div id="grain" class="grain-container-2"></div>
         <div data-collapse="small" data-animation="default" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar w-nav">
             <div class="nav-container w-container">
@@ -166,7 +167,7 @@
         <section class="about-container">
             <div class="about-div">
                 <div class="header-div full-width">
-                    <h5 class="heading-2">● About</h5>
+                    <h5 class="heading-2">About</h5>
                 </div>
                 <div class="about-content-div">
                     <div class="pfp-div">
@@ -186,7 +187,7 @@
         <section class="contact-section">
             <div class="contact-wrapper">
                 <div class="header-div full-width">
-                    <h5 class="heading-2">● Contact me</h5>
+                    <h5 class="heading-2">Contact me</h5>
                 </div>
                 <div class="contact-text-div">
                     <p class="contact-text">
@@ -300,4 +301,63 @@
             grained("#grain", options);
         </script>
     </body>
+    // ... existing code ...
+<script src="https://unpkg.com/swup@4"></script>
+<script>
+    // Initialize Swup
+    const swup = new Swup({
+        animationSelector: '[class*="transition-"]',
+        containers: ["#swup"]
+    });
+
+    // Reinitialize your other scripts after page change
+    swup.on('contentReplaced', function() {
+        // Reinitialize SplitType and GSAP animations
+        let typeSplit = new SplitType("[text-split]", {
+            types: "words",
+            tagName: "span"
+        });
+
+        // Reinitialize your scroll animations
+        $("[letters-slide-up], [words-slide-up], [words-rotate-in], [words-slide-from-right], [letters-slide-down], [letters-fade-in], [letters-fade-in-random], [scrub-each-word]").each(function(index) {
+            let tl = gsap.timeline({
+                paused: true
+            });
+            tl.from($(this).find(".word"), {
+                opacity: 0,
+                y: 20,
+                duration: 2,
+                ease: "power2.out",
+                stagger: {
+                    amount: 0.5
+                }
+            });
+            createScrollTrigger($(this), tl);
+        });
+
+        // Reinitialize grain effect
+        var options = {
+            animate: true,
+            patternWidth: 100,
+            patternHeight: 100,
+            grainOpacity: 0.05,
+            grainDensity: 1,
+            grainWidth: 1,
+            grainHeight: 1
+        };
+        grained("#grain", options);
+
+        // Reinitialize random color hover effect
+        document.querySelectorAll('.footer-link-block').forEach(block => {
+            block.addEventListener('mouseenter', () => {
+                block.style.backgroundColor = getRandomColor();
+            });
+            block.addEventListener('mouseleave', () => {
+                block.style.backgroundColor = '';
+            });
+        });
+    });
+</script>
+</body>
+</html>
 </html>

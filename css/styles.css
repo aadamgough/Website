@@ -2952,7 +2952,7 @@ html {
   }
   
   .link-block.link-block-vybe {
-    background-image: url("https://uploads-ssl.webflow.com/64daf5c0c154912f54a34b6e/64e2587883a623370f235d48_vybe%20cover%20IMG.jpg");
+    background-image: url("https://res.cloudinary.com/dmsgmyybq/image/upload/v1741042514/trail-homme_bfc1c85a-0a8c-41f3-b1e4-223eb4cda3fd_pv7rzc.webp");
     background-position: 0 0;
     background-repeat: no-repeat;
     background-size: cover;
@@ -2963,15 +2963,15 @@ html {
     border-radius: 10%;
   }
   
-  .link-block.link-block-trackr {
-    background-image: url("https://uploads-ssl.webflow.com/64daf5c0c154912f54a34b6e/64e14914fca9a83bf6ad1563_bikesaddle_030415-1.png");
+  .link-block.link-block-aspirations {
+    background-image: url("https://res.cloudinary.com/dmsgmyybq/image/upload/v1740444513/samples/landscapes/beach-boat.jpg");
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: cover;
     transition: border-radius .275s cubic-bezier(.47, 0, .745, .715);
   }
   
-  .link-block.link-block-trackr:hover {
+  .link-block.link-block-aspirations:hover {
     border-radius: 10%;
   }
   
@@ -3013,6 +3013,25 @@ html {
     padding-bottom: 7vw;
     display: none;
   }
+
+  /* Add transition styles */
+  .transition-fade {
+    opacity: 1;
+    transition: 500ms;
+    transform: translateX(0);
+    transform-origin: left;
+  }
+
+  body.is-animating .transition-fade {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  body.is-leaving .transition-fade {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  
   
   @media screen and (min-width: 1920px) {
     .main-wrapper {
