@@ -2951,15 +2951,15 @@ html {
     border-radius: 10%;
   }
   
-  .link-block.link-block-vybe {
-    background-image: url("https://res.cloudinary.com/dmsgmyybq/image/upload/v1741042514/trail-homme_bfc1c85a-0a8c-41f3-b1e4-223eb4cda3fd_pv7rzc.webp");
+  .link-block.link-block-stride {
+    background-image: url("https://res.cloudinhttps://res.cloudinary.com/dmsgmyybq/image/upload/v1742504586/Screenshot_2025-03-19_at_10.46.28_AM_k8ytty.pngary.com/dmsgmyybq/image/upload/v1741042514/trail-homme_bfc1c85a-0a8c-41f3-b1e4-223eb4cda3fd_pv7rzc.webp");
     background-position: 0 0;
     background-repeat: no-repeat;
     background-size: cover;
     transition: border-radius .3s cubic-bezier(.47, 0, .745, .715);
   }
   
-  .link-block.link-block-vybe:hover {
+  .link-block.link-block-stride:hover {
     border-radius: 10%;
   }
   
