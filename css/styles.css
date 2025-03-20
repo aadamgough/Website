@@ -2937,15 +2937,15 @@ html {
     height: 100%;
   }
   
-  .link-block.link-block-surfline {
-    background-image: url("https://uploads-ssl.webflow.com/64daf5c0c154912f54a34b6e/64e1482a6813d3c7e42a2e95_surfline.png");
+  .link-block.link-block-evervest {
+    background-image: url("https://res.cloudinary.com/dmsgmyybq/image/upload/v1742402323/Screenshot_2025-03-03_at_10.41.13_PM_fgsulc.png");
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: cover;
     transition: border-radius .3s cubic-bezier(.47, 0, .745, .715);
   }
   
-  .link-block.link-block-surfline:hover {
+  .link-block.link-block-evervest:hover {
     background-position: 50%;
     background-size: cover;
     border-radius: 10%;
